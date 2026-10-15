@@ -31,6 +31,7 @@ export function App() {
   const [activeTask, setActiveTask] = useState<AgentTask | null>(null);
   const [selectedStepId, setSelectedStepId] = useState<string | undefined>(undefined);
   const [isPlanning, setIsPlanning] = useState(false);
+  const [isExecuting, setIsExecuting] = useState(false);
   const [isSettingsOpen, setIsSettingsOpen] = useState(false);
   const [isDocModalOpen, setIsDocModalOpen] = useState(false);
   const [hasGeminiKey, setHasGeminiKey] = useState(false);
@@ -110,6 +111,7 @@ export function App() {
 
   // Command submit
   const handleInstructionSubmit = async (instruction: string, immediateExecute: boolean = true) => {
+    if (isPlanning || isExecuting) return;
     setIsPlanning(true);
     try {
       const task = immediateExecute ? await runTask(instruction) : await planTask(instruction);
@@ -124,10 +126,14 @@ export function App() {
 
   // Execution trigger
   const handleExecute = async (taskId: string) => {
+    if (isExecuting) return;
+    setIsExecuting(true);
     try {
       await executeTask(taskId);
     } catch (err: any) {
       alert(`Execution trigger failed: ${err.message}`);
+    } finally {
+      setIsExecuting(false);
     }
   };
 
@@ -171,7 +177,7 @@ export function App() {
   const activeCount = tasks.filter(t => t.status === 'running' || t.status === 'needs_approval').length;
 
   return (
-    <div className="min-h-screen bg-[#050814] flex">
+    <div className="min-h-screen bg-[#060709] flex text-white">
       {/* Sidebar */}
       <Sidebar
         currentView={currentView}

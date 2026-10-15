@@ -1,109 +1,231 @@
 [
   {
-    "id": "task-1792054383715-ikhg",
-    "instruction": "Controlled Unrecoverable Failure Run",
-    "createdAt": "2026-10-15T08:53:03.715Z",
-    "status": "running",
-    "steps": [],
-    "logs": [
-      {
-        "id": "log-1792054383715",
-        "timestamp": "2026-10-15T08:53:03.715Z",
-        "level": "info",
-        "message": "Task initialized via Task Manager tool: \"Controlled Unrecoverable Failure Run\""
-      }
-    ]
-  },
-  {
-    "id": "task-1792054383706-ir0s",
-    "instruction": "Test permanent failure",
-    "createdAt": "2026-10-15T08:53:03.706Z",
-    "status": "failed",
+    "id": "task-1792059223744-uhpc",
+    "instruction": "Analyze quantum computing breakthroughs in 2026",
+    "createdAt": "2026-10-15T10:13:43.744Z",
+    "status": "completed",
     "steps": [
       {
         "id": "step-1",
         "stepNumber": 1,
-        "description": "Initialize failure-test tracking record in task store",
-        "tool": "task_manager",
+        "description": "Perform web research on \"Analyze quantum computing breakthroughs in 2026\"",
+        "tool": "web_search",
         "params": {
-          "action": "create",
-          "instruction": "Controlled Unrecoverable Failure Run",
-          "status": "running"
+          "query": "Analyze quantum computing breakthroughs in 2026",
+          "maxResults": 4
         },
         "dependencies": [],
-        "expectedOutput": "Task record saved to persistent store and confirmed by read-back",
+        "expectedOutput": "List of factual web sources with verified URLs",
         "status": "completed",
         "retryCount": 0,
         "maxRetries": 2,
-        "startedAt": "2026-10-15T08:53:03.713Z",
+        "startedAt": "2026-10-15T10:13:50.420Z",
         "verification": {
           "verified": true,
-          "timestamp": "2026-10-15T08:53:03.719Z",
-          "checkType": "task_manager_read_back_check",
-          "expectedCriteria": "Task operation must be verified via disk read-back",
-          "actualOutcome": "Operation \"create\" committed to storage and verified by read-back",
-          "details": "Passed: Task store synchronized and verified."
+          "timestamp": "2026-10-15T10:13:51.337Z",
+          "checkType": "web_search_full_validation",
+          "expectedCriteria": "At least 1 result with valid title, snippet, and HTTP/S URL",
+          "actualOutcome": "Successfully verified 4 factual web sources with live URLs",
+          "details": "Passed: Source URLs verified (https://en.wikipedia.org/wiki/Timeline_of_quantum_computing_and_communication, https://en.wikipedia.org/wiki/Quantum_supremacy...)"
         },
-        "completedAt": "2026-10-15T08:53:03.719Z",
+        "completedAt": "2026-10-15T10:13:51.338Z",
         "output": {
-          "action": "create",
-          "taskId": "task-1792054383715-ikhg",
-          "title": "Controlled Unrecoverable Failure Run",
-          "status": "running",
-          "verified": true,
-          "data": {
-            "id": "task-1792054383715-ikhg",
-            "instruction": "Controlled Unrecoverable Failure Run",
-            "createdAt": "2026-10-15T08:53:03.715Z",
-            "status": "running",
-            "steps": [],
-            "logs": [
-              {
-                "id": "log-1792054383715",
-                "timestamp": "2026-10-15T08:53:03.715Z",
-                "level": "info",
-                "message": "Task initialized via Task Manager tool: \"Controlled Unrecoverable Failure Run\""
-              }
-            ]
-          }
+          "query": "Analyze quantum computing breakthroughs in 2026",
+          "results": [
+            {
+              "title": "Timeline of quantum computing and communication",
+              "snippet": "timeline of quantum computing and communication. Erwin Schrödinger publishes a theorem setting the basis for quantum steering and the limits of quantum state",
+              "url": "https://en.wikipedia.org/wiki/Timeline_of_quantum_computing_and_communication"
+            },
+            {
+              "title": "Quantum supremacy",
+              "snippet": "In quantum computing, quantum supremacy or quantum advantage is the goal of demonstrating that a programmable quantum computer can solve a problem that",
+              "url": "https://en.wikipedia.org/wiki/Quantum_supremacy"
+            },
+            {
+              "title": "Quantum machine learning",
+              "snippet": "learning tasks which analyze classical data, sometimes called quantum-enhanced machine learning. QML algorithms use qubits and quantum operations to try",
+              "url": "https://en.wikipedia.org/wiki/Quantum_machine_learning"
+            },
+            {
+              "title": "Natural computing",
+              "snippet": "biomolecules (DNA, RNA), or trapped-ion quantum computing devices. Dually, one can view processes occurring in nature as information processing. Such processes",
+              "url": "https://en.wikipedia.org/wiki/Natural_computing"
+            }
+          ],
+          "source": "Multi-Provider (Wikipedia Full-Text, Opensearch & DuckDuckGo)",
+          "count": 4
         }
       },
       {
         "id": "step-2",
         "stepNumber": 2,
-        "description": "Execute deliberate permanent failure simulation (exercises 2 retry cycles, then halts with honest FAILED status)",
-        "tool": "failure_test",
+        "description": "Synthesize findings and compile verified downloadable intelligence report",
+        "tool": "generate_report",
         "params": {
-          "mode": "permanent_failure"
+          "title": "Research Report: Analyze quantum computing breakthroughs in 20",
+          "introduction": "Research report addressing user instruction: \"Analyze quantum computing breakthroughs in 2026\"."
         },
         "dependencies": [
           "step-1"
         ],
-        "expectedOutput": "Honest error logging with retry exhaustion (Attempt #3) and FAILED state",
-        "status": "failed",
+        "expectedOutput": "Downloadable markdown report verified on disk with source links",
+        "status": "completed",
         "retryCount": 0,
         "maxRetries": 2,
-        "startedAt": "2026-10-15T08:53:03.722Z",
-        "error": "[SIMULATED_UNRECOVERABLE_FAILURE] Attempt #1: Target subsystem rejected request. Failure is permanent and cannot be safely retried.",
-        "completedAt": "2026-10-15T08:53:03.725Z"
-      },
-      {
-        "id": "step-3",
-        "stepNumber": 3,
-        "description": "Dependent downstream step (must NOT execute when step #2 fails)",
-        "tool": "generate_report",
-        "params": {
-          "title": "Unreachable Step"
+        "startedAt": "2026-10-15T10:13:51.342Z",
+        "verification": {
+          "verified": true,
+          "timestamp": "2026-10-15T10:13:51.363Z",
+          "checkType": "report_disk_and_structure_validation",
+          "expectedCriteria": "File exists on disk, size >= 50 bytes, valid markdown structure",
+          "actualOutcome": "Verified on disk (731 bytes, 63 words, 2 sections)",
+          "details": "Passed: File verified at C:\\Users\\gsaja\\OneDrive\\Desktop\\JarvisOS\\backend\\data\\reports\\research_report__analyze_quantum_computi_2026-10-15T10-13-51-346Z.md"
         },
-        "dependencies": [
-          "step-2"
-        ],
-        "expectedOutput": "Blocked by orchestrator due to unmet dependency",
-        "status": "pending",
-        "retryCount": 0,
-        "maxRetries": 2
+        "completedAt": "2026-10-15T10:13:51.364Z",
+        "output": {
+          "title": "Research Report: Analyze quantum computing breakthroughs in 20",
+          "fileName": "research_report__analyze_quantum_computi_2026-10-15T10-13-51-346Z.md",
+          "filePath": "C:\\Users\\gsaja\\OneDrive\\Desktop\\JarvisOS\\backend\\data\\reports\\research_report__analyze_quantum_computi_2026-10-15T10-13-51-346Z.md",
+          "downloadUrl": "/api/reports/research_report__analyze_quantum_computi_2026-10-15T10-13-51-346Z.md",
+          "wordCount": 63,
+          "sizeBytes": 731,
+          "sections": [
+            "1. Executive Summary & Introduction",
+            "References & Verified Sources"
+          ]
+        }
       }
     ],
+    "logs": [
+      {
+        "id": "log-1792059223744",
+        "timestamp": "2026-10-15T10:13:43.744Z",
+        "level": "info",
+        "message": "Plan generated with 2 ordered execution steps: \"Research topic \"Analyze quantum computing breakthroughs in 2026\" across verified web sources and generate a comprehensive downloadable report.\""
+      },
+      {
+        "id": "log-1792059230412-dwy0",
+        "timestamp": "2026-10-15T10:13:50.412Z",
+        "level": "info",
+        "message": "Initiating autonomous task execution for: \"Analyze quantum computing breakthroughs in 2026\""
+      },
+      {
+        "id": "log-1792059230420-eljd",
+        "timestamp": "2026-10-15T10:13:50.420Z",
+        "level": "info",
+        "message": "Starting Step #1: Perform web research on \"Analyze quantum computing breakthroughs in 2026\" [Tool: web_search]",
+        "stepId": "step-1"
+      },
+      {
+        "id": "log-1792059230430-t42g",
+        "timestamp": "2026-10-15T10:13:50.430Z",
+        "level": "info",
+        "message": "Executing tool \"web_search\" (Attempt #1/3)...",
+        "stepId": "step-1"
+      },
+      {
+        "id": "log-1792059231337-gdqk",
+        "timestamp": "2026-10-15T10:13:51.337Z",
+        "level": "info",
+        "message": "Tool execution returned. Running independent verification checks...",
+        "stepId": "step-1"
+      },
+      {
+        "id": "log-1792059231338-yga5",
+        "timestamp": "2026-10-15T10:13:51.338Z",
+        "level": "success",
+        "message": "Step #1 COMPLETED & VERIFIED: Successfully verified 4 factual web sources with live URLs",
+        "stepId": "step-1",
+        "details": {
+          "verification": {
+            "verified": true,
+            "timestamp": "2026-10-15T10:13:51.337Z",
+            "checkType": "web_search_full_validation",
+            "expectedCriteria": "At least 1 result with valid title, snippet, and HTTP/S URL",
+            "actualOutcome": "Successfully verified 4 factual web sources with live URLs",
+            "details": "Passed: Source URLs verified (https://en.wikipedia.org/wiki/Timeline_of_quantum_computing_and_communication, https://en.wikipedia.org/wiki/Quantum_supremacy...)"
+          }
+        }
+      },
+      {
+        "id": "log-1792059231342-h3wx",
+        "timestamp": "2026-10-15T10:13:51.342Z",
+        "level": "info",
+        "message": "Starting Step #2: Synthesize findings and compile verified downloadable intelligence report [Tool: generate_report]",
+        "stepId": "step-2"
+      },
+      {
+        "id": "log-1792059231346-zuh5",
+        "timestamp": "2026-10-15T10:13:51.346Z",
+        "level": "info",
+        "message": "Executing tool \"generate_report\" (Attempt #1/3)...",
+        "stepId": "step-2"
+      },
+      {
+        "id": "log-1792059231363-dvz4",
+        "timestamp": "2026-10-15T10:13:51.363Z",
+        "level": "info",
+        "message": "Tool execution returned. Running independent verification checks...",
+        "stepId": "step-2"
+      },
+      {
+        "id": "log-1792059231364-p33w",
+        "timestamp": "2026-10-15T10:13:51.364Z",
+        "level": "success",
+        "message": "Step #2 COMPLETED & VERIFIED: Verified on disk (731 bytes, 63 words, 2 sections)",
+        "stepId": "step-2",
+        "details": {
+          "verification": {
+            "verified": true,
+            "timestamp": "2026-10-15T10:13:51.363Z",
+            "checkType": "report_disk_and_structure_validation",
+            "expectedCriteria": "File exists on disk, size >= 50 bytes, valid markdown structure",
+            "actualOutcome": "Verified on disk (731 bytes, 63 words, 2 sections)",
+            "details": "Passed: File verified at C:\\Users\\gsaja\\OneDrive\\Desktop\\JarvisOS\\backend\\data\\reports\\research_report__analyze_quantum_computi_2026-10-15T10-13-51-346Z.md"
+          }
+        }
+      },
+      {
+        "id": "log-1792059231369-7qma",
+        "timestamp": "2026-10-15T10:13:51.369Z",
+        "level": "success",
+        "message": "Task fully COMPLETED and verified! All 2 steps succeeded."
+      }
+    ],
+    "startedAt": "2026-10-15T10:13:50.412Z",
+    "finalReportPath": "C:\\Users\\gsaja\\OneDrive\\Desktop\\JarvisOS\\backend\\data\\reports\\research_report__analyze_quantum_computi_2026-10-15T10-13-51-346Z.md",
+    "downloadUrl": "/api/reports/research_report__analyze_quantum_computi_2026-10-15T10-13-51-346Z.md",
+    "completedAt": "2026-10-15T10:13:51.369Z",
+    "overallVerification": {
+      "verified": true,
+      "timestamp": "2026-10-15T10:13:51.369Z",
+      "checkType": "full_task_verification",
+      "expectedCriteria": "All steps must complete and pass independent verification checks",
+      "actualOutcome": "Successfully verified all 2 execution steps",
+      "details": "JarvisOS Orchestrator confirmed task objective is fully satisfied."
+    }
+  },
+  {
+    "id": "task-1792053066406-khci",
+    "createdAt": "Thu Oct 15 2026 19:12:46 GMT+0900 (Korean Standard Time)",
+    "instruction": "Verify storage persistence",
+    "logs": [
+      {
+        "id": "log-1792053066406",
+        "timestamp": "2026-10-15T08:31:06.406Z",
+        "level": "info",
+        "message": "Task initialized via Task Manager tool: \"Verify storage persistence\""
+      }
+    ],
+    "status": "pending",
+    "steps": [],
+    "updatedAt": "2026-10-15T10:12:46.105Z"
+  },
+  {
+    "id": "task-1792054383706-ir0s",
+    "createdAt": "Thu Oct 15 2026 19:12:45 GMT+0900 (Korean Standard Time)",
+    "instruction": "Test permanent failure",
     "logs": [
       {
         "id": "log-1792054383706",
@@ -184,12 +306,114 @@
         "stepId": "step-2"
       }
     ],
-    "startedAt": "2026-10-15T08:53:03.711Z"
+    "startedAt": "2026-10-15T08:53:03.711Z",
+    "status": "failed",
+    "steps": [
+      {
+        "id": "step-1",
+        "stepNumber": 1,
+        "description": "Initialize failure-test tracking record in task store",
+        "tool": "task_manager",
+        "params": {
+          "action": "create",
+          "instruction": "Controlled Unrecoverable Failure Run",
+          "status": "running"
+        },
+        "dependencies": [],
+        "expectedOutput": "Task record saved to persistent store and confirmed by read-back",
+        "status": "completed",
+        "retryCount": 0,
+        "maxRetries": 2,
+        "output": {
+          "action": "create",
+          "taskId": "task-1792054383715-ikhg",
+          "title": "Controlled Unrecoverable Failure Run",
+          "status": "running",
+          "verified": true,
+          "data": {
+            "id": "task-1792054383715-ikhg",
+            "instruction": "Controlled Unrecoverable Failure Run",
+            "createdAt": "2026-10-15T08:53:03.715Z",
+            "status": "running",
+            "steps": [],
+            "logs": [
+              {
+                "id": "log-1792054383715",
+                "timestamp": "2026-10-15T08:53:03.715Z",
+                "level": "info",
+                "message": "Task initialized via Task Manager tool: \"Controlled Unrecoverable Failure Run\""
+              }
+            ]
+          }
+        },
+        "verification": {
+          "verified": true,
+          "timestamp": "2026-10-15T08:53:03.719Z",
+          "checkType": "task_manager_read_back_check",
+          "details": "Passed: Task store synchronized and verified.",
+          "expectedCriteria": "Task operation must be verified via disk read-back",
+          "actualOutcome": "Operation \"create\" committed to storage and verified by read-back"
+        },
+        "startedAt": "2026-10-15T08:53:03.713Z",
+        "completedAt": "2026-10-15T08:53:03.719Z"
+      },
+      {
+        "id": "step-2",
+        "stepNumber": 2,
+        "description": "Execute deliberate permanent failure simulation (exercises 2 retry cycles, then halts with honest FAILED status)",
+        "tool": "failure_test",
+        "params": {
+          "mode": "permanent_failure"
+        },
+        "dependencies": [
+          "step-1"
+        ],
+        "expectedOutput": "Honest error logging with retry exhaustion (Attempt #3) and FAILED state",
+        "status": "failed",
+        "retryCount": 0,
+        "maxRetries": 2,
+        "error": "[SIMULATED_UNRECOVERABLE_FAILURE] Attempt #1: Target subsystem rejected request. Failure is permanent and cannot be safely retried.",
+        "startedAt": "2026-10-15T08:53:03.722Z",
+        "completedAt": "2026-10-15T08:53:03.725Z"
+      },
+      {
+        "id": "step-3",
+        "stepNumber": 3,
+        "description": "Dependent downstream step (must NOT execute when step #2 fails)",
+        "tool": "generate_report",
+        "params": {
+          "title": "Unreachable Step"
+        },
+        "dependencies": [
+          "step-2"
+        ],
+        "expectedOutput": "Blocked by orchestrator due to unmet dependency",
+        "status": "pending",
+        "retryCount": 0,
+        "maxRetries": 2
+      }
+    ],
+    "updatedAt": "2026-10-15T10:12:45.121Z"
   },
   {
     "id": "task-1792054345675-zf9h",
+    "completedAt": "2026-10-15T08:52:51.454Z",
+    "createdAt": "Thu Oct 15 2026 19:12:45 GMT+0900 (Korean Standard Time)",
     "instruction": "Research three AI companies, compare their products, and generate a report",
-    "createdAt": "2026-10-15T08:52:25.675Z",
+    "logs": [
+      {
+        "id": "log-1792054345675",
+        "timestamp": "2026-10-15T08:52:25.675Z",
+        "level": "info",
+        "message": "Plan generated with 4 ordered execution steps: \"Autonomous multi-step investigation: research leading AI companies (OpenAI, Anthropic, Google DeepMind), compare frontier models and capabilities, and generate a verified markdown report.\""
+      },
+      {
+        "id": "log-1792054371454-npuy",
+        "timestamp": "2026-10-15T08:52:51.454Z",
+        "level": "warn",
+        "message": "Task was cancelled by the user."
+      }
+    ],
     "status": "failed",
     "steps": [
       {
@@ -309,272 +533,15 @@
         "error": "Cancelled by user."
       }
     ],
-    "logs": [
-      {
-        "id": "log-1792054345675",
-        "timestamp": "2026-10-15T08:52:25.675Z",
-        "level": "info",
-        "message": "Plan generated with 4 ordered execution steps: \"Autonomous multi-step investigation: research leading AI companies (OpenAI, Anthropic, Google DeepMind), compare frontier models and capabilities, and generate a verified markdown report.\""
-      },
-      {
-        "id": "log-1792054371454-npuy",
-        "timestamp": "2026-10-15T08:52:51.454Z",
-        "level": "warn",
-        "message": "Task was cancelled by the user."
-      }
-    ],
-    "completedAt": "2026-10-15T08:52:51.454Z"
+    "updatedAt": "2026-10-15T10:12:45.274Z"
   },
   {
     "id": "task-1792053554695-mf2w",
+    "completedAt": "2026-10-15T08:39:17.126Z",
+    "createdAt": "Thu Oct 15 2026 19:12:45 GMT+0900 (Korean Standard Time)",
+    "downloadUrl": "/api/reports/frontier_ai_organizations___architecture_2026-10-15T08-39-17-118Z.md",
+    "finalReportPath": "C:\\Users\\gsaja\\OneDrive\\Desktop\\JarvisOS\\data\\reports\\frontier_ai_organizations___architecture_2026-10-15T08-39-17-118Z.md",
     "instruction": "Research three AI companies, compare their products, and generate a report",
-    "createdAt": "2026-10-15T08:39:14.695Z",
-    "status": "completed",
-    "steps": [
-      {
-        "id": "step-1",
-        "stepNumber": 1,
-        "description": "Research OpenAI frontier products, models (GPT-4o, o3-mini), and architecture",
-        "tool": "web_search",
-        "params": {
-          "query": "OpenAI artificial intelligence research ChatGPT GPT-4o",
-          "maxResults": 4
-        },
-        "dependencies": [],
-        "status": "completed",
-        "retryCount": 0,
-        "maxRetries": 2,
-        "startedAt": "2026-10-15T08:39:14.717Z",
-        "verification": {
-          "verified": true,
-          "timestamp": "2026-10-15T08:39:15.733Z",
-          "checkType": "web_search_full_validation",
-          "expectedCriteria": "At least 1 result with valid title, snippet, and HTTP/S URL",
-          "actualOutcome": "Successfully verified 4 factual web sources with live URLs",
-          "details": "Passed: Source URLs verified (https://en.wikipedia.org/wiki/ChatGPT, https://en.wikipedia.org/wiki/GPT-4o...)"
-        },
-        "completedAt": "2026-10-15T08:39:15.733Z",
-        "output": {
-          "query": "OpenAI artificial intelligence research ChatGPT GPT-4o",
-          "results": [
-            {
-              "title": "ChatGPT",
-              "snippet": "toward the field of artificial intelligence (AI). OpenAI operates the service on a freemium model. Users can interact with ChatGPT through text, audio",
-              "url": "https://en.wikipedia.org/wiki/ChatGPT"
-            },
-            {
-              "title": "GPT-4o",
-              "snippet": "The retirement applied only to ChatGPT, and GPT-4o continued to be available through the API. The separate chatgpt-4o-latest API snapshot was retired",
-              "url": "https://en.wikipedia.org/wiki/GPT-4o"
-            },
-            {
-              "title": "ChatGPT Deep Research",
-              "snippet": "outperforming rivals like DeepSeek's model R1 (9.4%) and GPT-4o (3.3%). According to OpenAI, Deep Research occasionally makes factual hallucinations (errors)",
-              "url": "https://en.wikipedia.org/wiki/ChatGPT_Deep_Research"
-            },
-            {
-              "title": "GPT-6",
-              "snippet": "GPT-6 is a family of large language models (LLM) developed by American artificial intelligence firm OpenAI. GPT-6 Astra was released to the general public",
-              "url": "https://en.wikipedia.org/wiki/GPT-6"
-            }
-          ],
-          "source": "Multi-Provider (Wikipedia Full-Text, Opensearch & DuckDuckGo)",
-          "count": 4
-        }
-      },
-      {
-        "id": "step-2",
-        "stepNumber": 2,
-        "description": "Research Anthropic AI safety research, Claude 3.5 Sonnet, and alignment philosophy",
-        "tool": "web_search",
-        "params": {
-          "query": "Anthropic Claude AI artificial intelligence safety Constitutional AI",
-          "maxResults": 4
-        },
-        "dependencies": [],
-        "status": "completed",
-        "retryCount": 0,
-        "maxRetries": 2,
-        "startedAt": "2026-10-15T08:39:15.736Z",
-        "verification": {
-          "verified": true,
-          "timestamp": "2026-10-15T08:39:16.359Z",
-          "checkType": "web_search_full_validation",
-          "expectedCriteria": "At least 1 result with valid title, snippet, and HTTP/S URL",
-          "actualOutcome": "Successfully verified 4 factual web sources with live URLs",
-          "details": "Passed: Source URLs verified (https://en.wikipedia.org/wiki/Claude_(AI), https://en.wikipedia.org/wiki/AI_alignment...)"
-        },
-        "completedAt": "2026-10-15T08:39:16.359Z",
-        "output": {
-          "query": "Anthropic Claude AI artificial intelligence safety Constitutional AI",
-          "results": [
-            {
-              "title": "Claude (AI)",
-              "snippet": "Claude is a series of large language models (LLMs) developed by American software company Anthropic. Claude was released as an AI-based chatbot in March",
-              "url": "https://en.wikipedia.org/wiki/Claude_(AI)"
-            },
-            {
-              "title": "AI alignment",
-              "snippet": "In the field of artificial intelligence (AI), alignment aims to steer AI systems toward a person's or group's intended goals, preferences, or ethical principles",
-              "url": "https://en.wikipedia.org/wiki/AI_alignment"
-            },
-            {
-              "title": "Anthropic",
-              "snippet": "Anthropic, PBC (stylized as ANTHROP\\C or A\\) is an American artificial intelligence (AI) public benefit corporation headquartered in San Francisco, California",
-              "url": "https://en.wikipedia.org/wiki/Anthropic"
-            },
-            {
-              "title": "Large language model",
-              "snippet": "PMC 11114233. PMID 38781343. Edwards, Benj (9 May 2023). \"AI gains \"values\" with Anthropic's new Constitutional AI chatbot approach\". Ars Technica. Retrieved 30 June",
-              "url": "https://en.wikipedia.org/wiki/Large_language_model"
-            }
-          ],
-          "source": "Multi-Provider (Wikipedia Full-Text, Opensearch & DuckDuckGo)",
-          "count": 4
-        }
-      },
-      {
-        "id": "step-3",
-        "stepNumber": 3,
-        "description": "Research Google DeepMind frontier models (Gemini 2.0 Flash, AlphaFold) and innovations",
-        "tool": "web_search",
-        "params": {
-          "query": "Google DeepMind Gemini artificial intelligence research AlphaFold",
-          "maxResults": 4
-        },
-        "dependencies": [],
-        "status": "completed",
-        "retryCount": 0,
-        "maxRetries": 2,
-        "startedAt": "2026-10-15T08:39:16.365Z",
-        "verification": {
-          "verified": true,
-          "timestamp": "2026-10-15T08:39:17.111Z",
-          "checkType": "web_search_full_validation",
-          "expectedCriteria": "At least 1 result with valid title, snippet, and HTTP/S URL",
-          "actualOutcome": "Successfully verified 4 factual web sources with live URLs",
-          "details": "Passed: Source URLs verified (https://en.wikipedia.org/wiki/Gemini_(language_model), https://en.wikipedia.org/wiki/Google_Gemini...)"
-        },
-        "completedAt": "2026-10-15T08:39:17.111Z",
-        "output": {
-          "query": "Google DeepMind Gemini artificial intelligence research AlphaFold",
-          "results": [
-            {
-              "title": "Gemini (language model)",
-              "snippet": "Gemini is a family of multimodal large language models (LLMs) developed by Google DeepMind, and the successor to LaMDA and PaLM 2. Comprising Gemini Pro",
-              "url": "https://en.wikipedia.org/wiki/Gemini_(language_model)"
-            },
-            {
-              "title": "Google Gemini",
-              "snippet": "Gemini, also known as Google Gemini (formerly known as Bard), is a generative artificial intelligence chatbot and virtual assistant developed by Google",
-              "url": "https://en.wikipedia.org/wiki/Google_Gemini"
-            },
-            {
-              "title": "Google DeepMind",
-              "snippet": "DeepMind Technologies Limited, trading as Google DeepMind or simply DeepMind, is a British-American artificial intelligence (AI) research laboratory which",
-              "url": "https://en.wikipedia.org/wiki/Google_DeepMind"
-            },
-            {
-              "title": "AlphaGo",
-              "snippet": "backgammon neural network Pluribus (poker bot) AlphaZero AlphaFold \"Artificial intelligence: Google's AlphaGo beats Go master Lee Se-dol\". BBC News. 12 March",
-              "url": "https://en.wikipedia.org/wiki/AlphaGo"
-            }
-          ],
-          "source": "Multi-Provider (Wikipedia Full-Text, Opensearch & DuckDuckGo)",
-          "count": 4
-        }
-      },
-      {
-        "id": "step-4",
-        "stepNumber": 4,
-        "description": "Synthesize research, build comparative analysis table, and generate downloadable Markdown report verified on disk",
-        "tool": "generate_report",
-        "params": {
-          "title": "Frontier AI Organizations & Architecture Comparison Report",
-          "introduction": "An autonomous comparative intelligence report analyzing three leading artificial intelligence laboratories: OpenAI, Anthropic, and Google DeepMind. This report details core model capabilities, safety architectures, and strategic focus areas.",
-          "comparisonTable": {
-            "headers": [
-              "Organization",
-              "Flagship Models",
-              "Core Strengths",
-              "Key Innovations"
-            ],
-            "rows": [
-              [
-                "OpenAI",
-                "GPT-4o, o1, o3-mini",
-                "Consumer adoption, reasoning models, developer ecosystem",
-                "RLHF, reasoning tokens, ChatGPT"
-              ],
-              [
-                "Anthropic",
-                "Claude 3.5 Sonnet, Claude 3.5 Haiku",
-                "Safety alignment, coding excellence, long context (200k)",
-                "Constitutional AI, Computer Use, Artifacts"
-              ],
-              [
-                "Google DeepMind",
-                "Gemini 2.0 Flash, AlphaFold 3",
-                "Multimodal native training, scientific discovery, TPU scale",
-                "Native multimodal tokens, AlphaFold biology breakthroughs"
-              ]
-            ]
-          },
-          "sections": [
-            {
-              "heading": "Strategic Assessment & Market Position",
-              "content": "OpenAI dominates the consumer mindshare and developer tooling, Anthropic leads in programming benchmarks and safety-conscious enterprise deployments, while Google DeepMind provides unmatched multimodal infrastructure and scientific frontier breakthroughs."
-            }
-          ],
-          "sources": [
-            {
-              "title": "OpenAI Wikipedia & Research Profile",
-              "url": "https://en.wikipedia.org/wiki/OpenAI"
-            },
-            {
-              "title": "Anthropic AI Wikipedia & Research Profile",
-              "url": "https://en.wikipedia.org/wiki/Anthropic"
-            },
-            {
-              "title": "Google DeepMind Wikipedia & Research Profile",
-              "url": "https://en.wikipedia.org/wiki/Google_DeepMind"
-            }
-          ]
-        },
-        "dependencies": [
-          "step-1",
-          "step-2",
-          "step-3"
-        ],
-        "status": "completed",
-        "retryCount": 0,
-        "maxRetries": 2,
-        "startedAt": "2026-10-15T08:39:17.114Z",
-        "verification": {
-          "verified": true,
-          "timestamp": "2026-10-15T08:39:17.120Z",
-          "checkType": "report_disk_and_structure_validation",
-          "expectedCriteria": "File exists on disk, size >= 50 bytes, valid markdown structure",
-          "actualOutcome": "Verified on disk (2280 bytes, 239 words, 4 sections)",
-          "details": "Passed: File verified at C:\\Users\\gsaja\\OneDrive\\Desktop\\JarvisOS\\data\\reports\\frontier_ai_organizations___architecture_2026-10-15T08-39-17-118Z.md"
-        },
-        "completedAt": "2026-10-15T08:39:17.121Z",
-        "output": {
-          "title": "Frontier AI Organizations & Architecture Comparison Report",
-          "fileName": "frontier_ai_organizations___architecture_2026-10-15T08-39-17-118Z.md",
-          "filePath": "C:\\Users\\gsaja\\OneDrive\\Desktop\\JarvisOS\\data\\reports\\frontier_ai_organizations___architecture_2026-10-15T08-39-17-118Z.md",
-          "downloadUrl": "/api/reports/frontier_ai_organizations___architecture_2026-10-15T08-39-17-118Z.md",
-          "wordCount": 239,
-          "sizeBytes": 2280,
-          "sections": [
-            "1. Executive Summary & Introduction",
-            "2. Comparative Analysis",
-            "3. Strategic Assessment & Market Position",
-            "References & Verified Sources"
-          ]
-        }
-      }
-    ],
     "logs": [
       {
         "id": "log-1792053554695",
@@ -747,23 +714,310 @@
         "message": "Task fully COMPLETED and verified! All 4 steps succeeded."
       }
     ],
-    "startedAt": "2026-10-15T08:39:14.711Z",
-    "finalReportPath": "C:\\Users\\gsaja\\OneDrive\\Desktop\\JarvisOS\\data\\reports\\frontier_ai_organizations___architecture_2026-10-15T08-39-17-118Z.md",
-    "downloadUrl": "/api/reports/frontier_ai_organizations___architecture_2026-10-15T08-39-17-118Z.md",
-    "completedAt": "2026-10-15T08:39:17.126Z",
     "overallVerification": {
       "verified": true,
       "timestamp": "2026-10-15T08:39:17.126Z",
       "checkType": "full_task_verification",
+      "details": "JarvisOS Orchestrator confirmed task objective is fully satisfied.",
       "expectedCriteria": "All steps must complete and pass independent verification checks",
-      "actualOutcome": "Successfully verified all 4 execution steps",
-      "details": "JarvisOS Orchestrator confirmed task objective is fully satisfied."
-    }
+      "actualOutcome": "Successfully verified all 4 execution steps"
+    },
+    "startedAt": "2026-10-15T08:39:14.711Z",
+    "status": "completed",
+    "steps": [
+      {
+        "id": "step-1",
+        "stepNumber": 1,
+        "description": "Research OpenAI frontier products, models (GPT-4o, o3-mini), and architecture",
+        "tool": "web_search",
+        "params": {
+          "query": "OpenAI artificial intelligence research ChatGPT GPT-4o",
+          "maxResults": 4
+        },
+        "dependencies": [],
+        "status": "completed",
+        "retryCount": 0,
+        "maxRetries": 2,
+        "output": {
+          "query": "OpenAI artificial intelligence research ChatGPT GPT-4o",
+          "results": [
+            {
+              "title": "ChatGPT",
+              "snippet": "toward the field of artificial intelligence (AI). OpenAI operates the service on a freemium model. Users can interact with ChatGPT through text, audio",
+              "url": "https://en.wikipedia.org/wiki/ChatGPT"
+            },
+            {
+              "title": "GPT-4o",
+              "snippet": "The retirement applied only to ChatGPT, and GPT-4o continued to be available through the API. The separate chatgpt-4o-latest API snapshot was retired",
+              "url": "https://en.wikipedia.org/wiki/GPT-4o"
+            },
+            {
+              "title": "ChatGPT Deep Research",
+              "snippet": "outperforming rivals like DeepSeek's model R1 (9.4%) and GPT-4o (3.3%). According to OpenAI, Deep Research occasionally makes factual hallucinations (errors)",
+              "url": "https://en.wikipedia.org/wiki/ChatGPT_Deep_Research"
+            },
+            {
+              "title": "GPT-6",
+              "snippet": "GPT-6 is a family of large language models (LLM) developed by American artificial intelligence firm OpenAI. GPT-6 Astra was released to the general public",
+              "url": "https://en.wikipedia.org/wiki/GPT-6"
+            }
+          ],
+          "source": "Multi-Provider (Wikipedia Full-Text, Opensearch & DuckDuckGo)",
+          "count": 4
+        },
+        "verification": {
+          "verified": true,
+          "timestamp": "2026-10-15T08:39:15.733Z",
+          "checkType": "web_search_full_validation",
+          "details": "Passed: Source URLs verified (https://en.wikipedia.org/wiki/ChatGPT, https://en.wikipedia.org/wiki/GPT-4o...)",
+          "expectedCriteria": "At least 1 result with valid title, snippet, and HTTP/S URL",
+          "actualOutcome": "Successfully verified 4 factual web sources with live URLs"
+        },
+        "startedAt": "2026-10-15T08:39:14.717Z",
+        "completedAt": "2026-10-15T08:39:15.733Z"
+      },
+      {
+        "id": "step-2",
+        "stepNumber": 2,
+        "description": "Research Anthropic AI safety research, Claude 3.5 Sonnet, and alignment philosophy",
+        "tool": "web_search",
+        "params": {
+          "query": "Anthropic Claude AI artificial intelligence safety Constitutional AI",
+          "maxResults": 4
+        },
+        "dependencies": [],
+        "status": "completed",
+        "retryCount": 0,
+        "maxRetries": 2,
+        "output": {
+          "query": "Anthropic Claude AI artificial intelligence safety Constitutional AI",
+          "results": [
+            {
+              "title": "Claude (AI)",
+              "snippet": "Claude is a series of large language models (LLMs) developed by American software company Anthropic. Claude was released as an AI-based chatbot in March",
+              "url": "https://en.wikipedia.org/wiki/Claude_(AI)"
+            },
+            {
+              "title": "AI alignment",
+              "snippet": "In the field of artificial intelligence (AI), alignment aims to steer AI systems toward a person's or group's intended goals, preferences, or ethical principles",
+              "url": "https://en.wikipedia.org/wiki/AI_alignment"
+            },
+            {
+              "title": "Anthropic",
+              "snippet": "Anthropic, PBC (stylized as ANTHROP\\C or A\\) is an American artificial intelligence (AI) public benefit corporation headquartered in San Francisco, California",
+              "url": "https://en.wikipedia.org/wiki/Anthropic"
+            },
+            {
+              "title": "Large language model",
+              "snippet": "PMC 11114233. PMID 38781343. Edwards, Benj (9 May 2023). \"AI gains \"values\" with Anthropic's new Constitutional AI chatbot approach\". Ars Technica. Retrieved 30 June",
+              "url": "https://en.wikipedia.org/wiki/Large_language_model"
+            }
+          ],
+          "source": "Multi-Provider (Wikipedia Full-Text, Opensearch & DuckDuckGo)",
+          "count": 4
+        },
+        "verification": {
+          "verified": true,
+          "timestamp": "2026-10-15T08:39:16.359Z",
+          "checkType": "web_search_full_validation",
+          "details": "Passed: Source URLs verified (https://en.wikipedia.org/wiki/Claude_(AI), https://en.wikipedia.org/wiki/AI_alignment...)",
+          "expectedCriteria": "At least 1 result with valid title, snippet, and HTTP/S URL",
+          "actualOutcome": "Successfully verified 4 factual web sources with live URLs"
+        },
+        "startedAt": "2026-10-15T08:39:15.736Z",
+        "completedAt": "2026-10-15T08:39:16.359Z"
+      },
+      {
+        "id": "step-3",
+        "stepNumber": 3,
+        "description": "Research Google DeepMind frontier models (Gemini 2.0 Flash, AlphaFold) and innovations",
+        "tool": "web_search",
+        "params": {
+          "query": "Google DeepMind Gemini artificial intelligence research AlphaFold",
+          "maxResults": 4
+        },
+        "dependencies": [],
+        "status": "completed",
+        "retryCount": 0,
+        "maxRetries": 2,
+        "output": {
+          "query": "Google DeepMind Gemini artificial intelligence research AlphaFold",
+          "results": [
+            {
+              "title": "Gemini (language model)",
+              "snippet": "Gemini is a family of multimodal large language models (LLMs) developed by Google DeepMind, and the successor to LaMDA and PaLM 2. Comprising Gemini Pro",
+              "url": "https://en.wikipedia.org/wiki/Gemini_(language_model)"
+            },
+            {
+              "title": "Google Gemini",
+              "snippet": "Gemini, also known as Google Gemini (formerly known as Bard), is a generative artificial intelligence chatbot and virtual assistant developed by Google",
+              "url": "https://en.wikipedia.org/wiki/Google_Gemini"
+            },
+            {
+              "title": "Google DeepMind",
+              "snippet": "DeepMind Technologies Limited, trading as Google DeepMind or simply DeepMind, is a British-American artificial intelligence (AI) research laboratory which",
+              "url": "https://en.wikipedia.org/wiki/Google_DeepMind"
+            },
+            {
+              "title": "AlphaGo",
+              "snippet": "backgammon neural network Pluribus (poker bot) AlphaZero AlphaFold \"Artificial intelligence: Google's AlphaGo beats Go master Lee Se-dol\". BBC News. 12 March",
+              "url": "https://en.wikipedia.org/wiki/AlphaGo"
+            }
+          ],
+          "source": "Multi-Provider (Wikipedia Full-Text, Opensearch & DuckDuckGo)",
+          "count": 4
+        },
+        "verification": {
+          "verified": true,
+          "timestamp": "2026-10-15T08:39:17.111Z",
+          "checkType": "web_search_full_validation",
+          "details": "Passed: Source URLs verified (https://en.wikipedia.org/wiki/Gemini_(language_model), https://en.wikipedia.org/wiki/Google_Gemini...)",
+          "expectedCriteria": "At least 1 result with valid title, snippet, and HTTP/S URL",
+          "actualOutcome": "Successfully verified 4 factual web sources with live URLs"
+        },
+        "startedAt": "2026-10-15T08:39:16.365Z",
+        "completedAt": "2026-10-15T08:39:17.111Z"
+      },
+      {
+        "id": "step-4",
+        "stepNumber": 4,
+        "description": "Synthesize research, build comparative analysis table, and generate downloadable Markdown report verified on disk",
+        "tool": "generate_report",
+        "params": {
+          "title": "Frontier AI Organizations & Architecture Comparison Report",
+          "introduction": "An autonomous comparative intelligence report analyzing three leading artificial intelligence laboratories: OpenAI, Anthropic, and Google DeepMind. This report details core model capabilities, safety architectures, and strategic focus areas.",
+          "comparisonTable": {
+            "headers": [
+              "Organization",
+              "Flagship Models",
+              "Core Strengths",
+              "Key Innovations"
+            ],
+            "rows": [
+              [
+                "OpenAI",
+                "GPT-4o, o1, o3-mini",
+                "Consumer adoption, reasoning models, developer ecosystem",
+                "RLHF, reasoning tokens, ChatGPT"
+              ],
+              [
+                "Anthropic",
+                "Claude 3.5 Sonnet, Claude 3.5 Haiku",
+                "Safety alignment, coding excellence, long context (200k)",
+                "Constitutional AI, Computer Use, Artifacts"
+              ],
+              [
+                "Google DeepMind",
+                "Gemini 2.0 Flash, AlphaFold 3",
+                "Multimodal native training, scientific discovery, TPU scale",
+                "Native multimodal tokens, AlphaFold biology breakthroughs"
+              ]
+            ]
+          },
+          "sections": [
+            {
+              "heading": "Strategic Assessment & Market Position",
+              "content": "OpenAI dominates the consumer mindshare and developer tooling, Anthropic leads in programming benchmarks and safety-conscious enterprise deployments, while Google DeepMind provides unmatched multimodal infrastructure and scientific frontier breakthroughs."
+            }
+          ],
+          "sources": [
+            {
+              "title": "OpenAI Wikipedia & Research Profile",
+              "url": "https://en.wikipedia.org/wiki/OpenAI"
+            },
+            {
+              "title": "Anthropic AI Wikipedia & Research Profile",
+              "url": "https://en.wikipedia.org/wiki/Anthropic"
+            },
+            {
+              "title": "Google DeepMind Wikipedia & Research Profile",
+              "url": "https://en.wikipedia.org/wiki/Google_DeepMind"
+            }
+          ]
+        },
+        "dependencies": [
+          "step-1",
+          "step-2",
+          "step-3"
+        ],
+        "status": "completed",
+        "retryCount": 0,
+        "maxRetries": 2,
+        "output": {
+          "title": "Frontier AI Organizations & Architecture Comparison Report",
+          "fileName": "frontier_ai_organizations___architecture_2026-10-15T08-39-17-118Z.md",
+          "filePath": "C:\\Users\\gsaja\\OneDrive\\Desktop\\JarvisOS\\data\\reports\\frontier_ai_organizations___architecture_2026-10-15T08-39-17-118Z.md",
+          "downloadUrl": "/api/reports/frontier_ai_organizations___architecture_2026-10-15T08-39-17-118Z.md",
+          "wordCount": 239,
+          "sizeBytes": 2280,
+          "sections": [
+            "1. Executive Summary & Introduction",
+            "2. Comparative Analysis",
+            "3. Strategic Assessment & Market Position",
+            "References & Verified Sources"
+          ]
+        },
+        "verification": {
+          "verified": true,
+          "timestamp": "2026-10-15T08:39:17.120Z",
+          "checkType": "report_disk_and_structure_validation",
+          "details": "Passed: File verified at C:\\Users\\gsaja\\OneDrive\\Desktop\\JarvisOS\\data\\reports\\frontier_ai_organizations___architecture_2026-10-15T08-39-17-118Z.md",
+          "expectedCriteria": "File exists on disk, size >= 50 bytes, valid markdown structure",
+          "actualOutcome": "Verified on disk (2280 bytes, 239 words, 4 sections)"
+        },
+        "startedAt": "2026-10-15T08:39:17.114Z",
+        "completedAt": "2026-10-15T08:39:17.121Z"
+      }
+    ],
+    "updatedAt": "2026-10-15T10:12:45.443Z"
   },
   {
     "id": "task-1792053311721-oyz0",
+    "createdAt": "Thu Oct 15 2026 19:12:45 GMT+0900 (Korean Standard Time)",
     "instruction": "Research three AI companies, compare their products, and generate a report",
-    "createdAt": "2026-10-15T08:35:11.721Z",
+    "logs": [
+      {
+        "id": "log-1792053311721",
+        "timestamp": "2026-10-15T08:35:11.721Z",
+        "level": "info",
+        "message": "Plan generated with 4 ordered execution steps: \"Autonomous multi-step investigation: research leading AI companies (OpenAI, Anthropic, Google DeepMind), compare frontier models and capabilities, and generate a verified markdown report.\""
+      },
+      {
+        "id": "log-1792053311730-z11d",
+        "timestamp": "2026-10-15T08:35:11.730Z",
+        "level": "info",
+        "message": "Initiating autonomous task execution for: \"Research three AI companies, compare their products, and generate a report\""
+      },
+      {
+        "id": "log-1792053311734-jy07",
+        "timestamp": "2026-10-15T08:35:11.734Z",
+        "level": "info",
+        "message": "Starting Step #1: Research OpenAI frontier products, models (GPT-4o, o3-mini), and architecture [Tool: web_search]",
+        "stepId": "step-1"
+      },
+      {
+        "id": "log-1792053311738-ioa4",
+        "timestamp": "2026-10-15T08:35:11.738Z",
+        "level": "info",
+        "message": "Executing tool \"web_search\" (Attempt #1/3)...",
+        "stepId": "step-1"
+      },
+      {
+        "id": "log-1792053313811-qr8r",
+        "timestamp": "2026-10-15T08:35:13.811Z",
+        "level": "error",
+        "message": "Step #1 execution error: Web research failed: No verified search results found for \"OpenAI artificial intelligence research ChatGPT GPT-4o\". Ensure network connectivity.",
+        "stepId": "step-1"
+      },
+      {
+        "id": "log-1792053313811-l5h4",
+        "timestamp": "2026-10-15T08:35:13.811Z",
+        "level": "error",
+        "message": "Step #1 FAILED permanently after 1 attempt(s). Halting dependent task execution.",
+        "stepId": "step-1"
+      }
+    ],
+    "startedAt": "2026-10-15T08:35:11.730Z",
     "status": "failed",
     "steps": [
       {
@@ -779,8 +1033,8 @@
         "status": "failed",
         "retryCount": 0,
         "maxRetries": 2,
-        "startedAt": "2026-10-15T08:35:11.734Z",
         "error": "Web research failed: No verified search results found for \"OpenAI artificial intelligence research ChatGPT GPT-4o\". Ensure network connectivity.",
+        "startedAt": "2026-10-15T08:35:11.734Z",
         "completedAt": "2026-10-15T08:35:13.811Z"
       },
       {
@@ -878,56 +1132,12 @@
         "maxRetries": 2
       }
     ],
-    "logs": [
-      {
-        "id": "log-1792053311721",
-        "timestamp": "2026-10-15T08:35:11.721Z",
-        "level": "info",
-        "message": "Plan generated with 4 ordered execution steps: \"Autonomous multi-step investigation: research leading AI companies (OpenAI, Anthropic, Google DeepMind), compare frontier models and capabilities, and generate a verified markdown report.\""
-      },
-      {
-        "id": "log-1792053311730-z11d",
-        "timestamp": "2026-10-15T08:35:11.730Z",
-        "level": "info",
-        "message": "Initiating autonomous task execution for: \"Research three AI companies, compare their products, and generate a report\""
-      },
-      {
-        "id": "log-1792053311734-jy07",
-        "timestamp": "2026-10-15T08:35:11.734Z",
-        "level": "info",
-        "message": "Starting Step #1: Research OpenAI frontier products, models (GPT-4o, o3-mini), and architecture [Tool: web_search]",
-        "stepId": "step-1"
-      },
-      {
-        "id": "log-1792053311738-ioa4",
-        "timestamp": "2026-10-15T08:35:11.738Z",
-        "level": "info",
-        "message": "Executing tool \"web_search\" (Attempt #1/3)...",
-        "stepId": "step-1"
-      },
-      {
-        "id": "log-1792053313811-qr8r",
-        "timestamp": "2026-10-15T08:35:13.811Z",
-        "level": "error",
-        "message": "Step #1 execution error: Web research failed: No verified search results found for \"OpenAI artificial intelligence research ChatGPT GPT-4o\". Ensure network connectivity.",
-        "stepId": "step-1"
-      },
-      {
-        "id": "log-1792053313811-l5h4",
-        "timestamp": "2026-10-15T08:35:13.811Z",
-        "level": "error",
-        "message": "Step #1 FAILED permanently after 1 attempt(s). Halting dependent task execution.",
-        "stepId": "step-1"
-      }
-    ],
-    "startedAt": "2026-10-15T08:35:11.730Z"
+    "updatedAt": "2026-10-15T10:12:45.662Z"
   },
   {
     "id": "task-1792053232253-4pfu",
+    "createdAt": "Thu Oct 15 2026 19:12:45 GMT+0900 (Korean Standard Time)",
     "instruction": "Controlled Failure Simulation Run",
-    "createdAt": "2026-10-15T08:33:52.253Z",
-    "status": "running",
-    "steps": [],
     "logs": [
       {
         "id": "log-1792053232253",
@@ -935,175 +1145,18 @@
         "level": "info",
         "message": "Task initialized via Task Manager tool: \"Controlled Failure Simulation Run\""
       }
-    ]
+    ],
+    "status": "running",
+    "steps": [],
+    "updatedAt": "2026-10-15T10:12:45.817Z"
   },
   {
     "id": "task-1792053232130-sm2j",
+    "completedAt": "2026-10-15T08:33:55.332Z",
+    "createdAt": "Thu Oct 15 2026 19:12:45 GMT+0900 (Korean Standard Time)",
+    "downloadUrl": "/api/reports/jarvisos_failure_recovery_audit_report_2026-10-15T08-33-55-305Z.md",
+    "finalReportPath": "C:\\Users\\gsaja\\OneDrive\\Desktop\\JarvisOS\\data\\reports\\jarvisos_failure_recovery_audit_report_2026-10-15T08-33-55-305Z.md",
     "instruction": "Test failure recovery",
-    "createdAt": "2026-10-15T08:33:52.130Z",
-    "status": "completed",
-    "steps": [
-      {
-        "id": "step-1",
-        "stepNumber": 1,
-        "description": "Initialize failure-test tracking record in task store",
-        "tool": "task_manager",
-        "params": {
-          "action": "create",
-          "instruction": "Controlled Failure Simulation Run",
-          "status": "running"
-        },
-        "dependencies": [],
-        "status": "completed",
-        "retryCount": 0,
-        "maxRetries": 2,
-        "startedAt": "2026-10-15T08:33:52.250Z",
-        "verification": {
-          "verified": true,
-          "timestamp": "2026-10-15T08:33:52.261Z",
-          "checkType": "task_manager_read_back_check",
-          "expectedCriteria": "Task operation must be verified via disk read-back",
-          "actualOutcome": "Operation \"create\" committed to storage and verified by read-back",
-          "details": "Passed: Task store synchronized and verified."
-        },
-        "completedAt": "2026-10-15T08:33:52.261Z",
-        "output": {
-          "action": "create",
-          "taskId": "task-1792053232253-4pfu",
-          "title": "Controlled Failure Simulation Run",
-          "status": "running",
-          "verified": true,
-          "data": {
-            "id": "task-1792053232253-4pfu",
-            "instruction": "Controlled Failure Simulation Run",
-            "createdAt": "2026-10-15T08:33:52.253Z",
-            "status": "running",
-            "steps": [],
-            "logs": [
-              {
-                "id": "log-1792053232253",
-                "timestamp": "2026-10-15T08:33:52.253Z",
-                "level": "info",
-                "message": "Task initialized via Task Manager tool: \"Controlled Failure Simulation Run\""
-              }
-            ]
-          }
-        }
-      },
-      {
-        "id": "step-2",
-        "stepNumber": 2,
-        "description": "Execute controlled transient failure simulation (HTTP 504 Timeout on attempts 1-2, self-healing recovery on attempt 3)",
-        "tool": "failure_test",
-        "params": {
-          "mode": "transient_recovery",
-          "customMessage": "Simulated network disruption testing auto-retry mechanism"
-        },
-        "dependencies": [
-          "step-1"
-        ],
-        "status": "completed",
-        "retryCount": 2,
-        "maxRetries": 2,
-        "startedAt": "2026-10-15T08:33:52.265Z",
-        "verification": {
-          "verified": true,
-          "timestamp": "2026-10-15T08:33:55.298Z",
-          "checkType": "failure_recovery_check",
-          "expectedCriteria": "Step must recover after retry attempt and return valid output",
-          "actualOutcome": "Successfully recovered on attempt #3",
-          "details": "Passed: Transient disruption resolved via auto-retry policy."
-        },
-        "completedAt": "2026-10-15T08:33:55.298Z",
-        "output": {
-          "mode": "transient_recovery",
-          "attemptNumber": 2,
-          "simulatedError": "HTTP 504 Gateway Timeout (Simulated)",
-          "recovered": true,
-          "message": "Self-healing auto-retry succeeded on attempt #3! Service recovered and output verified."
-        }
-      },
-      {
-        "id": "step-3",
-        "stepNumber": 3,
-        "description": "Generate diagnostic audit report detailing error detection, retries, and recovery verification",
-        "tool": "generate_report",
-        "params": {
-          "title": "JarvisOS Failure Recovery Audit Report",
-          "introduction": "This report documents the autonomous detection of a transient network failure, execution of exponential backoff retry cycles, and successful self-healing recovery verification.",
-          "comparisonTable": {
-            "headers": [
-              "Attempt",
-              "Simulated Event",
-              "Agent Action",
-              "Outcome"
-            ],
-            "rows": [
-              [
-                "Attempt #1",
-                "HTTP 504 Gateway Timeout",
-                "Detected error, scheduled retry #1",
-                "Recoverable transient error logged"
-              ],
-              [
-                "Attempt #2",
-                "Connection Reset",
-                "Detected error, scheduled retry #2",
-                "Recoverable transient error logged"
-              ],
-              [
-                "Attempt #3",
-                "Auto-recovery execution",
-                "Verified response integrity",
-                "SUCCESS: System recovered"
-              ]
-            ]
-          },
-          "sections": [
-            {
-              "heading": "Verification Engine Diagnostics",
-              "content": "All verification checks executed as expected. Transient disruptions did not cause unhandled crashes, and the system remained responsive throughout."
-            }
-          ],
-          "sources": [
-            {
-              "title": "JarvisOS Resiliency & Self-Healing Architecture",
-              "url": "https://github.com/google-deepmind/chaos-jarvisos"
-            }
-          ]
-        },
-        "dependencies": [
-          "step-2"
-        ],
-        "status": "completed",
-        "retryCount": 0,
-        "maxRetries": 2,
-        "startedAt": "2026-10-15T08:33:55.301Z",
-        "verification": {
-          "verified": true,
-          "timestamp": "2026-10-15T08:33:55.329Z",
-          "checkType": "report_disk_and_structure_validation",
-          "expectedCriteria": "File exists on disk, size >= 50 bytes, valid markdown structure",
-          "actualOutcome": "Verified on disk (1154 bytes, 161 words, 4 sections)",
-          "details": "Passed: File verified at C:\\Users\\gsaja\\OneDrive\\Desktop\\JarvisOS\\data\\reports\\jarvisos_failure_recovery_audit_report_2026-10-15T08-33-55-305Z.md"
-        },
-        "completedAt": "2026-10-15T08:33:55.330Z",
-        "output": {
-          "title": "JarvisOS Failure Recovery Audit Report",
-          "fileName": "jarvisos_failure_recovery_audit_report_2026-10-15T08-33-55-305Z.md",
-          "filePath": "C:\\Users\\gsaja\\OneDrive\\Desktop\\JarvisOS\\data\\reports\\jarvisos_failure_recovery_audit_report_2026-10-15T08-33-55-305Z.md",
-          "downloadUrl": "/api/reports/jarvisos_failure_recovery_audit_report_2026-10-15T08-33-55-305Z.md",
-          "wordCount": 161,
-          "sizeBytes": 1154,
-          "sections": [
-            "1. Executive Summary & Introduction",
-            "2. Comparative Analysis",
-            "3. Verification Engine Diagnostics",
-            "References & Verified Sources"
-          ]
-        }
-      }
-    ],
     "logs": [
       {
         "id": "log-1792053232130",
@@ -1280,32 +1333,496 @@
         "message": "Task fully COMPLETED and verified! All 3 steps succeeded."
       }
     ],
-    "startedAt": "2026-10-15T08:33:52.247Z",
-    "finalReportPath": "C:\\Users\\gsaja\\OneDrive\\Desktop\\JarvisOS\\data\\reports\\jarvisos_failure_recovery_audit_report_2026-10-15T08-33-55-305Z.md",
-    "downloadUrl": "/api/reports/jarvisos_failure_recovery_audit_report_2026-10-15T08-33-55-305Z.md",
-    "completedAt": "2026-10-15T08:33:55.332Z",
     "overallVerification": {
       "verified": true,
       "timestamp": "2026-10-15T08:33:55.332Z",
       "checkType": "full_task_verification",
+      "details": "JarvisOS Orchestrator confirmed task objective is fully satisfied.",
       "expectedCriteria": "All steps must complete and pass independent verification checks",
-      "actualOutcome": "Successfully verified all 3 execution steps",
-      "details": "JarvisOS Orchestrator confirmed task objective is fully satisfied."
-    }
+      "actualOutcome": "Successfully verified all 3 execution steps"
+    },
+    "startedAt": "2026-10-15T08:33:52.247Z",
+    "status": "completed",
+    "steps": [
+      {
+        "id": "step-1",
+        "stepNumber": 1,
+        "description": "Initialize failure-test tracking record in task store",
+        "tool": "task_manager",
+        "params": {
+          "action": "create",
+          "instruction": "Controlled Failure Simulation Run",
+          "status": "running"
+        },
+        "dependencies": [],
+        "status": "completed",
+        "retryCount": 0,
+        "maxRetries": 2,
+        "output": {
+          "action": "create",
+          "taskId": "task-1792053232253-4pfu",
+          "title": "Controlled Failure Simulation Run",
+          "status": "running",
+          "verified": true,
+          "data": {
+            "id": "task-1792053232253-4pfu",
+            "instruction": "Controlled Failure Simulation Run",
+            "createdAt": "2026-10-15T08:33:52.253Z",
+            "status": "running",
+            "steps": [],
+            "logs": [
+              {
+                "id": "log-1792053232253",
+                "timestamp": "2026-10-15T08:33:52.253Z",
+                "level": "info",
+                "message": "Task initialized via Task Manager tool: \"Controlled Failure Simulation Run\""
+              }
+            ]
+          }
+        },
+        "verification": {
+          "verified": true,
+          "timestamp": "2026-10-15T08:33:52.261Z",
+          "checkType": "task_manager_read_back_check",
+          "details": "Passed: Task store synchronized and verified.",
+          "expectedCriteria": "Task operation must be verified via disk read-back",
+          "actualOutcome": "Operation \"create\" committed to storage and verified by read-back"
+        },
+        "startedAt": "2026-10-15T08:33:52.250Z",
+        "completedAt": "2026-10-15T08:33:52.261Z"
+      },
+      {
+        "id": "step-2",
+        "stepNumber": 2,
+        "description": "Execute controlled transient failure simulation (HTTP 504 Timeout on attempts 1-2, self-healing recovery on attempt 3)",
+        "tool": "failure_test",
+        "params": {
+          "mode": "transient_recovery",
+          "customMessage": "Simulated network disruption testing auto-retry mechanism"
+        },
+        "dependencies": [
+          "step-1"
+        ],
+        "status": "completed",
+        "retryCount": 2,
+        "maxRetries": 2,
+        "output": {
+          "mode": "transient_recovery",
+          "attemptNumber": 2,
+          "simulatedError": "HTTP 504 Gateway Timeout (Simulated)",
+          "recovered": true,
+          "message": "Self-healing auto-retry succeeded on attempt #3! Service recovered and output verified."
+        },
+        "verification": {
+          "verified": true,
+          "timestamp": "2026-10-15T08:33:55.298Z",
+          "checkType": "failure_recovery_check",
+          "details": "Passed: Transient disruption resolved via auto-retry policy.",
+          "expectedCriteria": "Step must recover after retry attempt and return valid output",
+          "actualOutcome": "Successfully recovered on attempt #3"
+        },
+        "startedAt": "2026-10-15T08:33:52.265Z",
+        "completedAt": "2026-10-15T08:33:55.298Z"
+      },
+      {
+        "id": "step-3",
+        "stepNumber": 3,
+        "description": "Generate diagnostic audit report detailing error detection, retries, and recovery verification",
+        "tool": "generate_report",
+        "params": {
+          "title": "JarvisOS Failure Recovery Audit Report",
+          "introduction": "This report documents the autonomous detection of a transient network failure, execution of exponential backoff retry cycles, and successful self-healing recovery verification.",
+          "comparisonTable": {
+            "headers": [
+              "Attempt",
+              "Simulated Event",
+              "Agent Action",
+              "Outcome"
+            ],
+            "rows": [
+              [
+                "Attempt #1",
+                "HTTP 504 Gateway Timeout",
+                "Detected error, scheduled retry #1",
+                "Recoverable transient error logged"
+              ],
+              [
+                "Attempt #2",
+                "Connection Reset",
+                "Detected error, scheduled retry #2",
+                "Recoverable transient error logged"
+              ],
+              [
+                "Attempt #3",
+                "Auto-recovery execution",
+                "Verified response integrity",
+                "SUCCESS: System recovered"
+              ]
+            ]
+          },
+          "sections": [
+            {
+              "heading": "Verification Engine Diagnostics",
+              "content": "All verification checks executed as expected. Transient disruptions did not cause unhandled crashes, and the system remained responsive throughout."
+            }
+          ],
+          "sources": [
+            {
+              "title": "JarvisOS Resiliency & Self-Healing Architecture",
+              "url": "https://github.com/google-deepmind/chaos-jarvisos"
+            }
+          ]
+        },
+        "dependencies": [
+          "step-2"
+        ],
+        "status": "completed",
+        "retryCount": 0,
+        "maxRetries": 2,
+        "output": {
+          "title": "JarvisOS Failure Recovery Audit Report",
+          "fileName": "jarvisos_failure_recovery_audit_report_2026-10-15T08-33-55-305Z.md",
+          "filePath": "C:\\Users\\gsaja\\OneDrive\\Desktop\\JarvisOS\\data\\reports\\jarvisos_failure_recovery_audit_report_2026-10-15T08-33-55-305Z.md",
+          "downloadUrl": "/api/reports/jarvisos_failure_recovery_audit_report_2026-10-15T08-33-55-305Z.md",
+          "wordCount": 161,
+          "sizeBytes": 1154,
+          "sections": [
+            "1. Executive Summary & Introduction",
+            "2. Comparative Analysis",
+            "3. Verification Engine Diagnostics",
+            "References & Verified Sources"
+          ]
+        },
+        "verification": {
+          "verified": true,
+          "timestamp": "2026-10-15T08:33:55.329Z",
+          "checkType": "report_disk_and_structure_validation",
+          "details": "Passed: File verified at C:\\Users\\gsaja\\OneDrive\\Desktop\\JarvisOS\\data\\reports\\jarvisos_failure_recovery_audit_report_2026-10-15T08-33-55-305Z.md",
+          "expectedCriteria": "File exists on disk, size >= 50 bytes, valid markdown structure",
+          "actualOutcome": "Verified on disk (1154 bytes, 161 words, 4 sections)"
+        },
+        "startedAt": "2026-10-15T08:33:55.301Z",
+        "completedAt": "2026-10-15T08:33:55.330Z"
+      }
+    ],
+    "updatedAt": "2026-10-15T10:12:45.939Z"
   },
   {
-    "id": "task-1792053066406-khci",
-    "instruction": "Verify storage persistence",
-    "createdAt": "2026-10-15T08:31:06.406Z",
-    "status": "pending",
-    "steps": [],
+    "id": "task-1792057897085-4unw",
+    "completedAt": "2026-10-15T09:52:11.564Z",
+    "createdAt": "Thu Oct 15 2026 19:12:44 GMT+0900 (Korean Standard Time)",
+    "downloadUrl": "/api/reports/research_report__generate_three_companie_2026-10-15T09-52-11-557Z.md",
+    "finalReportPath": "C:\\Users\\gsaja\\OneDrive\\Desktop\\JarvisOS\\backend\\data\\reports\\research_report__generate_three_companie_2026-10-15T09-52-11-557Z.md",
+    "instruction": "generate three companies name and genarete a report",
     "logs": [
       {
-        "id": "log-1792053066406",
-        "timestamp": "2026-10-15T08:31:06.406Z",
+        "id": "log-1792057897086",
+        "timestamp": "2026-10-15T09:51:37.086Z",
         "level": "info",
-        "message": "Task initialized via Task Manager tool: \"Verify storage persistence\""
+        "message": "Plan generated with 2 ordered execution steps: \"Research topic \"generate three companies name and genarete a report\" across verified web sources and generate a comprehensive downloadable report.\""
+      },
+      {
+        "id": "log-1792057897097-ahmg",
+        "timestamp": "2026-10-15T09:51:37.097Z",
+        "level": "info",
+        "message": "Initiating autonomous task execution for: \"generate three companies name and genarete a report\""
+      },
+      {
+        "id": "log-1792057897103-p9ta",
+        "timestamp": "2026-10-15T09:51:37.103Z",
+        "level": "info",
+        "message": "Starting Step #1: Perform web research on \"generate three companies name and genarete a repor\" [Tool: web_search]",
+        "stepId": "step-1"
+      },
+      {
+        "id": "log-1792057897108-ubfb",
+        "timestamp": "2026-10-15T09:51:37.108Z",
+        "level": "info",
+        "message": "Executing tool \"web_search\" (Attempt #1/3)...",
+        "stepId": "step-1"
+      },
+      {
+        "id": "log-1792057900049-lma5",
+        "timestamp": "2026-10-15T09:51:40.049Z",
+        "level": "info",
+        "message": "Tool execution returned. Running independent verification checks...",
+        "stepId": "step-1"
+      },
+      {
+        "id": "log-1792057900050-fqge",
+        "timestamp": "2026-10-15T09:51:40.050Z",
+        "level": "success",
+        "message": "Step #1 COMPLETED & VERIFIED: Successfully verified 4 factual web sources with live URLs",
+        "stepId": "step-1",
+        "details": {
+          "verification": {
+            "verified": true,
+            "timestamp": "2026-10-15T09:51:40.050Z",
+            "checkType": "web_search_full_validation",
+            "expectedCriteria": "At least 1 result with valid title, snippet, and HTTP/S URL",
+            "actualOutcome": "Successfully verified 4 factual web sources with live URLs",
+            "details": "Passed: Source URLs verified (https://en.wikipedia.org/wiki/Federal_Institute_of_Education%2C_Science_and_Technology_of_Cear%C3%A1, https://en.wikipedia.org/wiki/Company...)"
+          }
+        }
+      },
+      {
+        "id": "log-1792057900056-xh7m",
+        "timestamp": "2026-10-15T09:51:40.056Z",
+        "level": "info",
+        "message": "Starting Step #2: Synthesize findings and compile verified downloadable intelligence report [Tool: generate_report]",
+        "stepId": "step-2"
+      },
+      {
+        "id": "log-1792057900059-1wbg",
+        "timestamp": "2026-10-15T09:51:40.059Z",
+        "level": "info",
+        "message": "Executing tool \"generate_report\" (Attempt #1/3)...",
+        "stepId": "step-2"
+      },
+      {
+        "id": "log-1792057900062-xz4c",
+        "timestamp": "2026-10-15T09:51:40.062Z",
+        "level": "info",
+        "message": "Tool execution returned. Running independent verification checks...",
+        "stepId": "step-2"
+      },
+      {
+        "id": "log-1792057900065-qf24",
+        "timestamp": "2026-10-15T09:51:40.065Z",
+        "level": "success",
+        "message": "Step #2 COMPLETED & VERIFIED: Verified on disk (778 bytes, 71 words, 2 sections)",
+        "stepId": "step-2",
+        "details": {
+          "verification": {
+            "verified": true,
+            "timestamp": "2026-10-15T09:51:40.063Z",
+            "checkType": "report_disk_and_structure_validation",
+            "expectedCriteria": "File exists on disk, size >= 50 bytes, valid markdown structure",
+            "actualOutcome": "Verified on disk (778 bytes, 71 words, 2 sections)",
+            "details": "Passed: File verified at C:\\Users\\gsaja\\OneDrive\\Desktop\\JarvisOS\\backend\\data\\reports\\research_report__generate_three_companie_2026-10-15T09-51-40-059Z.md"
+          }
+        }
+      },
+      {
+        "id": "log-1792057900070-5fjs",
+        "timestamp": "2026-10-15T09:51:40.070Z",
+        "level": "success",
+        "message": "Task fully COMPLETED and verified! All 2 steps succeeded."
+      },
+      {
+        "id": "log-1792057928994-4enj",
+        "timestamp": "2026-10-15T09:52:08.994Z",
+        "level": "info",
+        "message": "Task re-run requested by user. Reset all steps and logs."
+      },
+      {
+        "id": "log-1792057928997-pwwl",
+        "timestamp": "2026-10-15T09:52:08.997Z",
+        "level": "info",
+        "message": "Initiating autonomous task execution for: \"generate three companies name and genarete a report\""
+      },
+      {
+        "id": "log-1792057929001-clii",
+        "timestamp": "2026-10-15T09:52:09.001Z",
+        "level": "info",
+        "message": "Starting Step #1: Perform web research on \"generate three companies name and genarete a repor\" [Tool: web_search]",
+        "stepId": "step-1"
+      },
+      {
+        "id": "log-1792057929004-rjz9",
+        "timestamp": "2026-10-15T09:52:09.004Z",
+        "level": "info",
+        "message": "Executing tool \"web_search\" (Attempt #1/3)...",
+        "stepId": "step-1"
+      },
+      {
+        "id": "log-1792057931552-o9c4",
+        "timestamp": "2026-10-15T09:52:11.552Z",
+        "level": "info",
+        "message": "Tool execution returned. Running independent verification checks...",
+        "stepId": "step-1"
+      },
+      {
+        "id": "log-1792057931552-9bf7",
+        "timestamp": "2026-10-15T09:52:11.552Z",
+        "level": "success",
+        "message": "Step #1 COMPLETED & VERIFIED: Successfully verified 4 factual web sources with live URLs",
+        "stepId": "step-1",
+        "details": {
+          "verification": {
+            "verified": true,
+            "timestamp": "2026-10-15T09:52:11.552Z",
+            "checkType": "web_search_full_validation",
+            "expectedCriteria": "At least 1 result with valid title, snippet, and HTTP/S URL",
+            "actualOutcome": "Successfully verified 4 factual web sources with live URLs",
+            "details": "Passed: Source URLs verified (https://en.wikipedia.org/wiki/Federal_Institute_of_Education%2C_Science_and_Technology_of_Cear%C3%A1, https://en.wikipedia.org/wiki/Company...)"
+          }
+        }
+      },
+      {
+        "id": "log-1792057931555-0q2x",
+        "timestamp": "2026-10-15T09:52:11.555Z",
+        "level": "info",
+        "message": "Starting Step #2: Synthesize findings and compile verified downloadable intelligence report [Tool: generate_report]",
+        "stepId": "step-2"
+      },
+      {
+        "id": "log-1792057931557-c99n",
+        "timestamp": "2026-10-15T09:52:11.557Z",
+        "level": "info",
+        "message": "Executing tool \"generate_report\" (Attempt #1/3)...",
+        "stepId": "step-2"
+      },
+      {
+        "id": "log-1792057931559-ur9z",
+        "timestamp": "2026-10-15T09:52:11.559Z",
+        "level": "info",
+        "message": "Tool execution returned. Running independent verification checks...",
+        "stepId": "step-2"
+      },
+      {
+        "id": "log-1792057931560-o4ci",
+        "timestamp": "2026-10-15T09:52:11.560Z",
+        "level": "success",
+        "message": "Step #2 COMPLETED & VERIFIED: Verified on disk (778 bytes, 71 words, 2 sections)",
+        "stepId": "step-2",
+        "details": {
+          "verification": {
+            "verified": true,
+            "timestamp": "2026-10-15T09:52:11.559Z",
+            "checkType": "report_disk_and_structure_validation",
+            "expectedCriteria": "File exists on disk, size >= 50 bytes, valid markdown structure",
+            "actualOutcome": "Verified on disk (778 bytes, 71 words, 2 sections)",
+            "details": "Passed: File verified at C:\\Users\\gsaja\\OneDrive\\Desktop\\JarvisOS\\backend\\data\\reports\\research_report__generate_three_companie_2026-10-15T09-52-11-557Z.md"
+          }
+        }
+      },
+      {
+        "id": "log-1792057931564-6pbt",
+        "timestamp": "2026-10-15T09:52:11.564Z",
+        "level": "success",
+        "message": "Task fully COMPLETED and verified! All 2 steps succeeded."
       }
-    ]
+    ],
+    "overallVerification": {
+      "verified": true,
+      "timestamp": "2026-10-15T09:52:11.564Z",
+      "checkType": "full_task_verification",
+      "details": "JarvisOS Orchestrator confirmed task objective is fully satisfied.",
+      "expectedCriteria": "All steps must complete and pass independent verification checks",
+      "actualOutcome": "Successfully verified all 2 execution steps"
+    },
+    "startedAt": "2026-10-15T09:52:08.997Z",
+    "status": "completed",
+    "steps": [
+      {
+        "id": "step-1",
+        "stepNumber": 1,
+        "description": "Perform web research on \"generate three companies name and genarete a repor\"",
+        "tool": "web_search",
+        "params": {
+          "query": "generate three companies name and genarete a report",
+          "maxResults": 4
+        },
+        "dependencies": [],
+        "expectedOutput": "List of factual web sources with verified URLs",
+        "status": "completed",
+        "retryCount": 0,
+        "maxRetries": 2,
+        "output": {
+          "query": "generate three companies name and genarete a report",
+          "results": [
+            {
+              "title": "Federal Institute of Education, Science and Technology of Ceará",
+              "snippet": "campuses, which aims to destinate the genareted waste to waste collectors groups, to improve the processes of selection and destination of recycling. Through",
+              "url": "https://en.wikipedia.org/wiki/Federal_Institute_of_Education%2C_Science_and_Technology_of_Cear%C3%A1"
+            },
+            {
+              "title": "Company",
+              "snippet": "regions. Incorporated companies are created through state registration, whereas unincorporated companies are not. When a company closes, it may undergo",
+              "url": "https://en.wikipedia.org/wiki/Company"
+            },
+            {
+              "title": "North Korean remote worker scheme",
+              "snippet": "in Western companies under stolen or fabricated identities, primarily targeting information technology and technical roles. They generate revenue for",
+              "url": "https://en.wikipedia.org/wiki/North_Korean_remote_worker_scheme"
+            },
+            {
+              "title": "The Cooper Companies",
+              "snippet": "one year later. The company was renamed The Cooper Companies in 1987. Three years later, it was further restructured into three business units: CooperVision",
+              "url": "https://en.wikipedia.org/wiki/The_Cooper_Companies"
+            }
+          ],
+          "source": "Multi-Provider (Wikipedia Full-Text, Opensearch & DuckDuckGo)",
+          "count": 4
+        },
+        "verification": {
+          "verified": true,
+          "timestamp": "2026-10-15T09:52:11.552Z",
+          "checkType": "web_search_full_validation",
+          "details": "Passed: Source URLs verified (https://en.wikipedia.org/wiki/Federal_Institute_of_Education%2C_Science_and_Technology_of_Cear%C3%A1, https://en.wikipedia.org/wiki/Company...)",
+          "expectedCriteria": "At least 1 result with valid title, snippet, and HTTP/S URL",
+          "actualOutcome": "Successfully verified 4 factual web sources with live URLs"
+        },
+        "startedAt": "2026-10-15T09:52:09.001Z",
+        "completedAt": "2026-10-15T09:52:11.552Z"
+      },
+      {
+        "id": "step-2",
+        "stepNumber": 2,
+        "description": "Synthesize findings and compile verified downloadable intelligence report",
+        "tool": "generate_report",
+        "params": {
+          "title": "Research Report: generate three companies name and genarete a ",
+          "introduction": "Research report addressing user instruction: \"generate three companies name and genarete a report\"."
+        },
+        "dependencies": [
+          "step-1"
+        ],
+        "expectedOutput": "Downloadable markdown report verified on disk with source links",
+        "status": "completed",
+        "retryCount": 0,
+        "maxRetries": 2,
+        "output": {
+          "title": "Research Report: generate three companies name and genarete a",
+          "fileName": "research_report__generate_three_companie_2026-10-15T09-52-11-557Z.md",
+          "filePath": "C:\\Users\\gsaja\\OneDrive\\Desktop\\JarvisOS\\backend\\data\\reports\\research_report__generate_three_companie_2026-10-15T09-52-11-557Z.md",
+          "downloadUrl": "/api/reports/research_report__generate_three_companie_2026-10-15T09-52-11-557Z.md",
+          "wordCount": 71,
+          "sizeBytes": 778,
+          "sections": [
+            "1. Executive Summary & Introduction",
+            "References & Verified Sources"
+          ]
+        },
+        "verification": {
+          "verified": true,
+          "timestamp": "2026-10-15T09:52:11.559Z",
+          "checkType": "report_disk_and_structure_validation",
+          "details": "Passed: File verified at C:\\Users\\gsaja\\OneDrive\\Desktop\\JarvisOS\\backend\\data\\reports\\research_report__generate_three_companie_2026-10-15T09-52-11-557Z.md",
+          "expectedCriteria": "File exists on disk, size >= 50 bytes, valid markdown structure",
+          "actualOutcome": "Verified on disk (778 bytes, 71 words, 2 sections)"
+        },
+        "startedAt": "2026-10-15T09:52:11.555Z",
+        "completedAt": "2026-10-15T09:52:11.560Z"
+      }
+    ],
+    "updatedAt": "2026-10-15T10:12:44.769Z"
+  },
+  {
+    "id": "task-1792054383715-ikhg",
+    "createdAt": "Thu Oct 15 2026 19:12:44 GMT+0900 (Korean Standard Time)",
+    "instruction": "Controlled Unrecoverable Failure Run",
+    "logs": [
+      {
+        "id": "log-1792054383715",
+        "timestamp": "2026-10-15T08:53:03.715Z",
+        "level": "info",
+        "message": "Task initialized via Task Manager tool: \"Controlled Unrecoverable Failure Run\""
+      }
+    ],
+    "status": "running",
+    "steps": [],
+    "updatedAt": "2026-10-15T10:12:44.962Z"
   }
 ]

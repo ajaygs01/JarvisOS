@@ -29,7 +29,8 @@ export async function executeDocumentAnalyzer(params: DocumentAnalyzerParams): P
   if (apiKey) {
     try {
       const genAI = new GoogleGenerativeAI(apiKey);
-      const model = genAI.getGenerativeModel({ model: 'gemini-1.5-flash' });
+      const modelName = process.env.GEMINI_MODEL || 'gemini-3.8-flash';
+      const model = genAI.getGenerativeModel({ model: modelName });
 
       const prompt = `You are JarvisOS Document Intelligence Analyzer. Analyze the following document text and provide:
 1. A concise, high-value executive summary (2-3 paragraphs).

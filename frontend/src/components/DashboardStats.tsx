@@ -1,5 +1,5 @@
 import React from 'react';
-import { CheckCircle2, XCircle, Activity, TrendingUp, Cpu, ShieldCheck } from 'lucide-react';
+import { CheckCircle2, XCircle, Activity, TrendingUp, Zap, ShieldAlert } from 'lucide-react';
 import type { SystemStats } from '../types/agent.js';
 
 interface DashboardStatsProps {
@@ -9,40 +9,40 @@ interface DashboardStatsProps {
 export const DashboardStats: React.FC<DashboardStatsProps> = ({ stats }) => {
   const cards = [
     {
-      title: 'TOTAL TASKS',
+      title: 'TOTAL MISSIONS',
       value: stats.totalTasks,
-      subtext: `${stats.runningTasks} currently active`,
+      subtext: `${stats.runningTasks} active in pipeline`,
       icon: Activity,
-      color: 'text-cyber-cyan',
-      borderColor: 'hover:border-cyber-cyan/40',
-      glow: 'glow-cyan-sm',
+      color: 'text-cyber-red',
+      borderColor: 'hover:border-cyber-red/50',
+      glow: 'glow-red-sm',
     },
     {
-      title: 'COMPLETED & VERIFIED',
+      title: 'VERIFIED SUCCESS',
       value: stats.completedTasks,
-      subtext: 'Passed 100% verification',
+      subtext: 'Passed independent verification',
       icon: CheckCircle2,
       color: 'text-cyber-emerald',
-      borderColor: 'hover:border-cyber-emerald/40',
+      borderColor: 'hover:border-cyber-emerald/50',
       glow: 'glow-emerald',
     },
     {
-      title: 'FAILED / RECOVERED',
+      title: 'FAILURES / SIMULATIONS',
       value: stats.failedTasks,
       subtext: 'Auto-retries recorded',
       icon: XCircle,
       color: 'text-cyber-rose',
-      borderColor: 'hover:border-cyber-rose/40',
+      borderColor: 'hover:border-cyber-rose/50',
       glow: 'glow-rose',
     },
     {
-      title: 'SUCCESS RATE',
+      title: 'RELIABILITY RATE',
       value: `${stats.successRate}%`,
-      subtext: 'Autonomous outcome reliability',
+      subtext: 'Autonomous outcome fidelity',
       icon: TrendingUp,
-      color: 'text-cyber-violet',
-      borderColor: 'hover:border-cyber-violet/40',
-      glow: 'glow-violet',
+      color: 'text-cyber-gold',
+      borderColor: 'hover:border-cyber-gold/50',
+      glow: 'glow-gold',
     },
   ];
 
@@ -56,10 +56,10 @@ export const DashboardStats: React.FC<DashboardStatsProps> = ({ stats }) => {
             className={`hud-card rounded-2xl p-4 relative overflow-hidden transition-all duration-300 ${card.borderColor}`}
           >
             <div className="flex items-center justify-between mb-2">
-              <span className="text-[11px] font-mono tracking-wider text-cyber-textMuted uppercase font-semibold">
+              <span className="text-[11px] font-mono tracking-wider text-slate-400 uppercase font-bold">
                 {card.title}
               </span>
-              <div className={`p-2 rounded-xl bg-[#050814] border border-[#1E293B] ${card.color}`}>
+              <div className={`p-2 rounded-xl bg-[#090A10] border border-cyber-border ${card.color}`}>
                 <Icon className="w-4 h-4" />
               </div>
             </div>
@@ -70,9 +70,12 @@ export const DashboardStats: React.FC<DashboardStatsProps> = ({ stats }) => {
               </span>
             </div>
 
-            <div className="mt-2 flex items-center justify-between text-[11px] text-cyber-textMuted border-t border-[#1E293B]/60 pt-2">
+            <div className="mt-2 flex items-center justify-between text-[11px] text-slate-400 border-t border-cyber-border/70 pt-2 font-mono">
               <span>{card.subtext}</span>
-              <span className="text-[10px] font-mono text-slate-500">REALTIME</span>
+              <span className="text-[10px] text-cyber-red font-bold flex items-center gap-1">
+                <span className="w-1.5 h-1.5 rounded-full bg-cyber-red animate-pulse" />
+                LIVE
+              </span>
             </div>
           </div>
         );

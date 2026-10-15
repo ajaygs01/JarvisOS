@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { UploadCloud, FileText, X, Check, Loader2, AlertCircle } from 'lucide-react';
+import { UploadCloud, FileText, X, Check, AlertCircle } from 'lucide-react';
 
 interface DocumentUploadModalProps {
   isOpen: boolean;
@@ -60,24 +60,24 @@ export const DocumentUploadModal: React.FC<DocumentUploadModalProps> = ({
   };
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm animate-in fade-in">
-      <div className="hud-card rounded-2xl max-w-lg w-full p-6 border border-cyber-cyan/40 shadow-2xl relative">
+    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/85 backdrop-blur-md animate-in fade-in">
+      <div className="hud-card rounded-2xl max-w-lg w-full p-6 border border-cyber-red/40 shadow-2xl relative glow-red-sm">
         <button
           onClick={onClose}
-          className="absolute top-4 right-4 p-1.5 rounded-lg text-cyber-textMuted hover:text-white hover:bg-[#050814]"
+          className="absolute top-4 right-4 p-1.5 rounded-lg text-slate-400 hover:text-white hover:bg-[#08090E]"
         >
           <X className="w-4 h-4" />
         </button>
 
         <div className="flex items-center space-x-3 mb-4">
-          <div className="p-3 rounded-xl bg-[#050814] border border-cyber-cyan/40 text-cyber-cyan glow-cyan-sm">
+          <div className="p-3 rounded-xl bg-[#090A10] border border-cyber-red/40 text-cyber-red glow-red-sm">
             <UploadCloud className="w-5 h-5" />
           </div>
           <div>
-            <h3 className="text-base font-display font-bold text-white">
+            <h3 className="text-base font-display font-bold text-white tracking-wide">
               Document Intelligence Analyzer
             </h3>
-            <span className="text-xs text-cyber-textMuted font-mono">
+            <span className="text-xs text-cyber-gold font-mono">
               Upload .txt, .md, .json, .csv for autonomous summarization
             </span>
           </div>
@@ -85,25 +85,25 @@ export const DocumentUploadModal: React.FC<DocumentUploadModalProps> = ({
 
         <form onSubmit={handleSubmit} className="space-y-4">
           {/* File Upload Zone */}
-          <div className="border-2 border-dashed border-[#1E293B] hover:border-cyber-cyan/50 rounded-xl p-5 text-center bg-[#050814]/60 transition-all cursor-pointer relative">
+          <div className="border-2 border-dashed border-cyber-border hover:border-cyber-red/50 rounded-xl p-5 text-center bg-[#08090E]/80 transition-all cursor-pointer relative group">
             <input
               type="file"
               accept=".txt,.md,.json,.csv"
               onChange={handleFileUpload}
               className="absolute inset-0 opacity-0 cursor-pointer w-full h-full"
             />
-            <FileText className="w-8 h-8 text-cyber-cyan mx-auto mb-2 opacity-80" />
+            <FileText className="w-8 h-8 text-cyber-red mx-auto mb-2 opacity-80 group-hover:scale-105 transition-transform" />
             <p className="text-xs font-semibold text-white">
               {fileName ? fileName : 'Click to select or drag document here'}
             </p>
-            <p className="text-[10px] text-cyber-textMuted mt-0.5">
+            <p className="text-[10px] text-slate-400 mt-0.5">
               Supports Text, Markdown, JSON, and CSV (Max 2MB)
             </p>
           </div>
 
           {/* Direct Text Paste Option */}
           <div>
-            <label className="block text-xs font-mono text-cyber-textMuted mb-1">
+            <label className="block text-xs font-mono text-slate-300 mb-1">
               Or paste text directly:
             </label>
             <textarea
@@ -111,7 +111,7 @@ export const DocumentUploadModal: React.FC<DocumentUploadModalProps> = ({
               value={content}
               onChange={(e) => setContent(e.target.value)}
               placeholder="Paste raw document text here..."
-              className="w-full bg-[#050814] border border-[#1E293B] focus:border-cyber-cyan rounded-xl p-3 text-xs text-white placeholder-slate-600 focus:outline-none focus:ring-1 focus:ring-cyber-cyan font-mono resize-none"
+              className="w-full bg-[#08090E] border border-cyber-border focus:border-cyber-red rounded-xl p-3 text-xs text-white placeholder-slate-600 focus:outline-none focus:ring-1 focus:ring-cyber-red font-mono resize-none"
             />
           </div>
 
@@ -126,14 +126,14 @@ export const DocumentUploadModal: React.FC<DocumentUploadModalProps> = ({
             <button
               type="button"
               onClick={onClose}
-              className="px-4 py-2 rounded-xl bg-[#050814] border border-[#1E293B] text-xs text-cyber-textMuted hover:text-white"
+              className="px-4 py-2 rounded-xl bg-[#090A10] border border-cyber-border text-xs text-slate-400 hover:text-white"
             >
               Cancel
             </button>
             <button
               type="submit"
               disabled={!content.trim()}
-              className="flex items-center space-x-1.5 px-4 py-2 rounded-xl bg-cyber-cyan text-black font-semibold text-xs hover:bg-cyber-cyan/90 disabled:opacity-50 glow-cyan-sm"
+              className="flex items-center space-x-1.5 px-4 py-2 rounded-xl bg-cyber-red text-white font-bold text-xs hover:bg-cyber-red/90 disabled:opacity-50 glow-red-sm border border-cyber-red active:scale-95"
             >
               <Check className="w-3.5 h-3.5" />
               <span>Analyze Document</span>

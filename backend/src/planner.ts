@@ -23,7 +23,8 @@ export async function generateTaskPlan(instruction: string): Promise<GeneratedPl
   if (apiKey) {
     try {
       const genAI = new GoogleGenerativeAI(apiKey);
-      const model = genAI.getGenerativeModel({ model: 'gemini-1.5-flash' });
+      const modelName = process.env.GEMINI_MODEL || 'gemini-3.8-flash';
+      const model = genAI.getGenerativeModel({ model: modelName });
 
       const systemPrompt = `You are JarvisOS Autonomous Task Planner.
 Your job is to break down the user's natural language instruction into an ordered sequence of discrete, verifiable steps using the available tools.

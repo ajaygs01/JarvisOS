@@ -5,8 +5,8 @@ let currentUri = '';
 let currentDatabase = '';
 
 export async function connectDB(): Promise<boolean> {
-  const uri = process.env.MONGODB_URI || 'mongodb://localhost:27017/jarvis-os';
-  const dbName = process.env.MONGODB_DATABASE || 'jarvis-os';
+  const uri = process.env.MONGODB_URI || 'mongodb://localhost:27017/jarvisos';
+  const dbName = process.env.MONGODB_DATABASE || 'jarvisos';
   currentUri = uri;
   currentDatabase = dbName;
 
@@ -39,6 +39,6 @@ export function getMongoStatus(): { connected: boolean; state: string; uri: stri
     connected: isMongoConnected(),
     state: stateStr,
     uri: currentUri ? currentUri.replace(/\/\/.*@/, '//***@') : '',
-    database: currentDatabase || process.env.MONGODB_DATABASE || 'jarvis-os',
+    database: currentDatabase || process.env.MONGODB_DATABASE || 'jarvisos',
   };
 }

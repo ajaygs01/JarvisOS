@@ -278,7 +278,7 @@ app.get('/api/config', (req, res) => {
     geminiKeyMasked: process.env.GEMINI_API_KEY
       ? `${process.env.GEMINI_API_KEY.slice(0, 4)}...${process.env.GEMINI_API_KEY.slice(-4)}`
       : 'Not configured',
-    model: 'gemini-1.5-flash / gemini-2.0-flash',
+    model: process.env.GEMINI_MODEL || 'gemini-3.8-flash',
     mongo: getMongoStatus(),
     tools: Object.values(TOOLS).map(t => ({
       name: t.name,

@@ -1,10 +1,25 @@
+# Dependencies
 node_modules
+*/node_modules
+
+# Build artifacts
 dist
+*/dist
 dist-ssr
+*/dist-ssr
+
+# Environment files
 *.local
 .env
 .env.*
+*/.env
+*/.env.*
 !.env.example
+!*/.env.example
+
+# Local storage data
+backend/data/*.json
+backend/data/reports/*.md
 
 # Logs
 logs
@@ -25,4 +40,3 @@ lerna-debug.log*
 *.njsproj
 *.sln
 *.sw?
-node_modules

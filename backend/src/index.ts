@@ -10,6 +10,14 @@ import { verifyStepOutcome } from './verifier.js';
 import { connectDB, getMongoStatus } from './db/connection.js';
 import type { SystemStats, ToolName } from './types/agent.js';
 
+import { fileURLToPath } from 'node:url';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
+// Load environment variables from both backend directory and workspace root
+dotenv.config({ path: path.resolve(__dirname, '../.env') });
+dotenv.config({ path: path.resolve(process.cwd(), '.env') });
 dotenv.config();
 
 const app = express();

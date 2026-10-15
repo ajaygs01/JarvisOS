@@ -3,10 +3,11 @@ import cors from 'cors';
 import dotenv from 'dotenv';
 import path from 'node:path';
 import fs from 'node:fs';
-import { initStorage, getAllTasks, getTask, getReportFile } from './storage.js';
+import { initStorage, getAllTasks, getTask, getReportFile, syncStorageWithMongo } from './storage.js';
 import { createPlan, runTaskOrchestrator, approveStepAndResume, rerunTask, cancelTask, onTaskUpdate } from './orchestrator.js';
 import { executeTool, TOOLS } from './tools/index.js';
 import { verifyStepOutcome } from './verifier.js';
+import { connectDB, getMongoStatus } from './db/connection.js';
 import type { SystemStats, ToolName } from './types/agent.js';
 
 dotenv.config();
@@ -251,6 +252,17 @@ app.get('/api/stats', (req, res) => {
   }
 });
 
+// System Health & Diagnostics
+app.get('/api/health', (req, res) => {
+  res.json({
+    status: 'ok',
+    uptimeSeconds: Math.floor(process.uptime()),
+    timestamp: new Date().toISOString(),
+    mongo: getMongoStatus(),
+    hasGeminiKey: Boolean(process.env.GEMINI_API_KEY),
+  });
+});
+
 // Config & Settings
 app.get('/api/config', (req, res) => {
   res.json({
@@ -259,6 +271,7 @@ app.get('/api/config', (req, res) => {
       ? `${process.env.GEMINI_API_KEY.slice(0, 4)}...${process.env.GEMINI_API_KEY.slice(-4)}`
       : 'Not configured',
     model: 'gemini-1.5-flash / gemini-2.0-flash',
+    mongo: getMongoStatus(),
     tools: Object.values(TOOLS).map(t => ({
       name: t.name,
       displayName: t.displayName,
@@ -282,7 +295,10 @@ app.post('/api/config', (req, res) => {
   }
 });
 
-app.listen(PORT, () => {
+const server = app.listen(PORT, async () => {
   console.log(`⚡ JarvisOS Agent Backend listening on http://localhost:${PORT}`);
-  console.log(`📁 Task storage initialized in ${path.resolve(process.cwd(), 'data')}`);
+  await connectDB();
+  await syncStorageWithMongo();
+  const mongoStatus = getMongoStatus();
+  console.log(`📊 Storage Mode: ${mongoStatus.connected ? 'MongoDB Active' : 'Local Disk Fallback Active'}`);
 });

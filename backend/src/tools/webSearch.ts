@@ -38,7 +38,7 @@ export async function executeWebSearch(params: { query: string; maxResults?: num
       });
 
       if (res.ok) {
-        const data = await res.json();
+        const data: any = await res.json();
         const searchItems = data?.query?.search;
         if (Array.isArray(searchItems) && searchItems.length > 0) {
           for (const item of searchItems) {
@@ -75,7 +75,7 @@ export async function executeWebSearch(params: { query: string; maxResults?: num
         });
 
         if (res.ok) {
-          const data = await res.json();
+          const data: any = await res.json();
           if (Array.isArray(data) && data.length >= 4) {
             const titles = data[1] || [];
             const descriptions = data[2] || [];

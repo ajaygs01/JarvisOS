@@ -1,5 +1,5 @@
 import { GoogleGenerativeAI } from '@google/generative-ai';
-import type { TaskStep, ToolName } from '../src/types/agent.js';
+import type { TaskStep, ToolName } from './types/agent.js';
 
 export interface GeneratedPlan {
   taskSummary: string;

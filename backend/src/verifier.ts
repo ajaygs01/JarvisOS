@@ -1,5 +1,5 @@
 import { checkReportExists } from './storage.js';
-import type { TaskStep, VerificationResult } from '../src/types/agent.js';
+import type { TaskStep, VerificationResult } from './types/agent.js';
 
 export function verifyStepOutcome(step: TaskStep, output: any): VerificationResult {
   const timestamp = new Date().toISOString();

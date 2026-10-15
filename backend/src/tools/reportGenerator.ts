@@ -1,5 +1,5 @@
 import { saveReportFile } from '../storage.js';
-import type { ReportGeneratorOutput } from '../../src/types/agent.js';
+import type { ReportGeneratorOutput } from '../types/agent.js';
 
 export interface GenerateReportParams {
   title: string;

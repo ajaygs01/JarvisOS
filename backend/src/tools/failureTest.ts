@@ -1,4 +1,4 @@
-import type { FailureTestOutput } from '../../src/types/agent.js';
+import type { FailureTestOutput } from '../types/agent.js';
 
 export interface FailureTestParams {
   mode: 'transient_recovery' | 'permanent_failure';

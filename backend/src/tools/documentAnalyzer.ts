@@ -1,5 +1,5 @@
 import { GoogleGenerativeAI } from '@google/generative-ai';
-import type { DocumentAnalyzerOutput } from '../../src/types/agent.js';
+import type { DocumentAnalyzerOutput } from '../types/agent.js';
 
 export interface DocumentAnalyzerParams {
   fileName: string;

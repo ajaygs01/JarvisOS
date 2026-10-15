@@ -3,7 +3,7 @@ import { executeReportGenerator } from './reportGenerator.js';
 import { executeTaskManager } from './taskManager.js';
 import { executeDocumentAnalyzer } from './documentAnalyzer.js';
 import { executeFailureTest } from './failureTest.js';
-import type { ToolName } from '../../src/types/agent.js';
+import type { ToolName } from '../types/agent.js';
 
 export interface ToolDefinition {
   name: ToolName;

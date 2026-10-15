@@ -1,4 +1,4 @@
-import type { WebSearchOutput, WebSearchResultItem } from '../../src/types/agent.js';
+import type { WebSearchOutput, WebSearchResultItem } from '../types/agent.js';
 
 export async function executeWebSearch(params: { query: string; maxResults?: number }): Promise<WebSearchOutput> {
   const rawQuery = params.query?.trim();

@@ -2,7 +2,7 @@ import { getTask, saveTask } from './storage.js';
 import { generateTaskPlan } from './planner.js';
 import { executeTool, TOOLS } from './tools/index.js';
 import { verifyStepOutcome, isTransientError } from './verifier.js';
-import type { AgentTask, TaskStep, ExecutionLog, TaskStatus } from '../src/types/agent.js';
+import type { AgentTask, TaskStep, ExecutionLog, TaskStatus } from './types/agent.js';
 
 type TaskUpdateListener = (task: AgentTask) => void;
 const listeners: Set<TaskUpdateListener> = new Set();

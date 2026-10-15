@@ -1,5 +1,5 @@
 import { getAllTasks, getTask, saveTask, deleteTask } from '../storage.js';
-import type { AgentTask, TaskManagerOutput } from '../../src/types/agent.js';
+import type { AgentTask, TaskManagerOutput } from '../types/agent.js';
 
 export interface TaskManagerParams {
   action: 'create' | 'update' | 'list' | 'complete' | 'delete';

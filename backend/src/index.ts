@@ -7,7 +7,7 @@ import { initStorage, getAllTasks, getTask, getReportFile } from './storage.js';
 import { createPlan, runTaskOrchestrator, approveStepAndResume, rerunTask, cancelTask, onTaskUpdate } from './orchestrator.js';
 import { executeTool, TOOLS } from './tools/index.js';
 import { verifyStepOutcome } from './verifier.js';
-import type { SystemStats, ToolName } from '../src/types/agent.js';
+import type { SystemStats, ToolName } from './types/agent.js';
 
 dotenv.config();
 

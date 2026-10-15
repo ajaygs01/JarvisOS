@@ -1,6 +1,6 @@
 import fs from 'node:fs';
 import path from 'node:path';
-import type { AgentTask } from '../src/types/agent.js';
+import type { AgentTask } from './types/agent.js';
 
 const DATA_DIR = path.resolve(process.cwd(), 'data');
 const REPORTS_DIR = path.resolve(DATA_DIR, 'reports');
